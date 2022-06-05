@@ -1,0 +1,23 @@
+.background{
+    -fx-background-color: whitesmoke;
+    -fx-text-base-color: whitesmoke;
+}
+
+.buttonGenerar{
+    -fx-font-family: "Microsoft New Tai Lue";
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: whitesmoke;
+    -fx-background-color: rgb(25, 114, 120);
+}
+
+.textoTitulo{
+    -fx-font-family: "Microsoft New Tai Lue";
+}
+
+.buttonDescargar:hover{
+     -fx-opacity: 0.9;
+    }
+}
+
+

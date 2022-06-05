@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="410.0" prefWidth="650.0" styleClass="background" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.controladorQR">
+   <children>
+      <Rectangle fx:id="rectanguloEmail" arcHeight="25.0" arcWidth="25.0" fill="#77bd8e99" height="98.0" layoutX="39.0" layoutY="26.0" stroke="#197278" strokeType="INSIDE" strokeWidth="2.0" visible="false" width="272.0" />
+      <Rectangle fx:id="rectanguloRadioButtoms" arcHeight="25.0" arcWidth="25.0" fill="#77bd8e99" height="156.0" layoutX="39.0" layoutY="134.0" stroke="#197278" strokeType="INSIDE" strokeWidth="2.0" visible="false" width="272.0" />
+      <Rectangle fx:id="rectanguloIntroducirDatos" arcHeight="25.0" arcWidth="25.0" fill="#77bd8e99" height="81.0" layoutX="39.0" layoutY="299.0" stroke="#197278" strokeType="INSIDE" strokeWidth="2.0" visible="false" width="272.0" />
+      <Label fx:id="labelEmail" layoutX="52.0" layoutY="36.0" onMouseClicked="#clickEnDatosEmail" prefHeight="17.0" prefWidth="346.0" styleClass="textoTitulo" text="Ingresa tu dirección de correo electrónico">
+         <font>
+            <Font name="Microsoft New Tai Lue Bold" size="12.0" />
+         </font></Label>
+      <TextField id="textFieldEmail" fx:id="textFieldEmail" layoutX="50.0" layoutY="61.0" onKeyReleased="#comprobarDatosTextFieldEmail" onMouseClicked="#clickEnDatosEmail" prefHeight="25.0" prefWidth="250.0" promptText="Ej: usuario@gmail.com" styleClass="textField" />
+      <Label layoutX="52.0" layoutY="91.0" opacity="0.7" prefHeight="17.0" prefWidth="272.0" text="Al ingresar tu email, aceptas recibir correo electrónico de marketing de Shopify.">
+         <font>
+            <Font name="Microsoft Tai Le" size="7.0" />
+         </font></Label>
+      <Label fx:id="labelTipoDeDato" layoutX="52.0" layoutY="144.0" prefHeight="17.0" prefWidth="221.0" styleClass="textoTitulo" text="Selecciona el tipo de dato">
+         <font>
+            <Font name="Microsoft JhengHei Bold" size="12.0" />
+         </font></Label>
+      <RadioButton fx:id="radioButtonEnlaceWeb" layoutX="50.0" layoutY="174.0" mnemonicParsing="false" onAction="#checkRadioButtom" prefHeight="17.0" prefWidth="140.0" selected="true" styleClass="radioButtons" text="Enlace del sitio web" textFill="#535252">
+         <toggleGroup>
+            <ToggleGroup fx:id="tipoDeDato" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="radioButtonNumTelf" layoutX="50.0" layoutY="203.0" mnemonicParsing="false" onAction="#checkRadioButtom" prefHeight="17.0" prefWidth="140.0" styleClass="radioButtons" text="Número de teléfono" textFill="#535252" toggleGroup="$tipoDeDato" />
+      <RadioButton fx:id="radioButtonSMS" layoutX="50.0" layoutY="231.0" mnemonicParsing="false" onAction="#checkRadioButtom" prefHeight="17.0" prefWidth="133.0" styleClass="radioButtons" text="SMS" textFill="#535252" toggleGroup="$tipoDeDato" />
+      <RadioButton fx:id="radioButtomTextoSinFormato" layoutX="50.0" layoutY="260.0" mnemonicParsing="false" onAction="#checkRadioButtom" prefHeight="17.0" prefWidth="133.0" styleClass="radioButtons" text="Texto sin formato" textFill="#535252" toggleGroup="$tipoDeDato" />
+      <Label fx:id="labelIntroducirDatos" layoutX="51.0" layoutY="310.0" prefHeight="17.0" prefWidth="284.0" styleClass="textoTitulo" text="Introduce los datos">
+         <font>
+            <Font name="Microsoft JhengHei Bold" size="12.0" />
+         </font></Label>
+      <TextField fx:id="textFieldIntroducirDatos" layoutX="50.0" layoutY="334.0" onMouseClicked="#clickEnIntroducirDatos" prefHeight="25.0" prefWidth="250.0" promptText="www.shopify.com" styleClass="textField" />
+      <ImageView fx:id="imagenQR" fitHeight="225.0" fitWidth="225.0" layoutX="370.0" layoutY="45.0" opacity="0.25" pickOnBounds="true" preserveRatio="true" styleClass="exampleQR">
+         <image>
+            <Image url="@images/qr-example.png" />
+         </image></ImageView>
+      <Button id="buttonGenerar" fx:id="buttonGenerar" disable="true" layoutX="370.0" layoutY="311.0" mnemonicParsing="false" onAction="#clickButtonGenerarQR" prefHeight="48.0" prefWidth="225.0" styleClass="buttonGenerar" text="Generar" textAlignment="CENTER">
+         <font>
+            <Font name="Microsoft JhengHei Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="textFieldTextoSMS" layoutX="50.0" layoutY="367.0" prefHeight="25.0" prefWidth="250.0" promptText="Escriba mensaje a enviar" visible="false" />
+      <Label fx:id="labelQR" layoutX="370.0" layoutY="46.0" prefHeight="225.0" prefWidth="225.0" visible="false" />
+      <Button fx:id="buttonDescargar" disable="true" layoutX="370.0" layoutY="45.0" mnemonicParsing="false" onAction="#guardarQR" opacity="0.0" prefHeight="225.0" prefWidth="225.0" styleClass="buttonDescargar" />
+   </children>
+</AnchorPane>
